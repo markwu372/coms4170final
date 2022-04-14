@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'homepage.js') }}"></script>
+<script>
+    let homepage_data = {{homepage_data|tojson}}
+</script>
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div> <b>What is photo composition?</b> </div>
+                <div class="row">
+                    <div class="col-auto-12" id="description">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div> <b>Selected Composition Rules/Types</b> </div>
+                <div class="row">
+                    <div class="col-auto-12" id="rules">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8"> </div>
+                    <div class="col-auto">
+                        <form action="lessons/1">
+                            <input type="submit">
+                        </form>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

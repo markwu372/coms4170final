@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+<!-- jquery -->
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+
+  <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+  <script type="text/javascript" src="{{ url_for('static', filename = 'layout.js') }}"></script>
+    <title>Composition Rules and Examples</title>
+  </head>
+  <body>
+    
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/home" id="home_title">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <!-- Search From is cited from "https://getbootstrap.com/docs/4.2/components/navbar/" -->
+        <a class="navbar-brand" href="{{ url_for('lessons', id=1) }}" id="Rules_of_Thirds">Rules of Thirds</a>
+        <a class="navbar-brand" href="{{ url_for('lessons', id=2) }}" id="Leading_Lines">Leading Lines</a>
+        <a class="navbar-brand" href="{{ url_for('lessons', id=3) }}" id="Balance">Balance</a>
+        <a class="navbar-brand" href="{{ url_for('lessons', id=4) }}" id="Diagonals">Diagonals</a>
+        <a class="navbar-brand" href="{{ url_for('lessons', id=5) }}" id="Frames">Frames</a>
+        <a class="navbar-brand" href="{{ url_for('quiz', id=1) }}" id="Quiz">Quiz</a>
+    </div>
+  </div>
+</nav>
+<div id="outer">
+  <div class="container">
+      {% block content %}
+      {% endblock %}
+  </div>
+</div>
+
+  </body>
+</html>
+
+
