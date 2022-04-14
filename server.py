@@ -16,7 +16,7 @@ lessons_data = {
         "lessons_id" : "1",
         "title" : "Rules of Thirds",
         "next_lesson" : "2"
-        # More to be add
+        # More to be added
     },
     "2": {
         "lessons_id" : "2",
@@ -46,7 +46,7 @@ quiz_data = {
         "quiz_id": "1",
         "title": "Problem1",
         "next_quiz": "2"
-        # More to be add
+        # More to be added
     }
 }
 
