@@ -15,28 +15,56 @@ lessons_data = {
     "1": {
         "lessons_id" : "1",
         "title" : "Rules of Thirds",
-        "next_lesson" : "2"
+        "next_lesson" : "2", 
         # More to be added
+        "p1": "https://www.capturelandscapes.com/wp-content/uploads/2017/10/Greenland-Husky-Rule-of-Thirds.jpg",
+    
+    "p2": "https://reyherphoto.com/wp-content/uploads/2016/11/rule-of-thirds-in-photography.jpg",
+    "p3":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule1_counter1.jpeg?token=GHSAT0AAAAAABTPA73NZOFGTRLUMSGY75XGYS3ESQQ",
+    "p4":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule1_counter2.jpeg?token=GHSAT0AAAAAABTPA73MAZEIUKZODHHA7OWWYS3ETBA",
+    "description":"The rule of thirds is a way of dividing frames for optimal composition. It involves evenly dividing the frame between two equally spaced horizontal and vertical gridlines, creating a three-by-three grid. In order to create balance and flow within the image, compositional elements should be placed where these lines of the grid intersect or segment your image."
     },
+
     "2": {
         "lessons_id" : "2",
         "title" : "Leading Lines",
-        "next_lesson" : "3"
+        "next_lesson" : "3",
+        "p1":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule2_1.png?token=GHSAT0AAAAAABTPA73MRE2FMYB2CAHDDCJEYS3FEUQ",
+        "p2":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule2_2.jpeg?token=GHSAT0AAAAAABTPA73M7W2ZTDK3BVB3B7UUYS3FE5Q",
+        "p3":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule2_1_withline.png?token=GHSAT0AAAAAABTPA73MZIK3CWUHHJHQGLQ2YS3FFHQ",
+        "p4":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule2_2_withline.jpeg?token=GHSAT0AAAAAABTPA73NENLEO3BS2JSH4DIUYS3FFOQ",
+        "description":"Leading lines are visual elements that pull the viewer’s eye toward a subject or focal point. They can be anything — roads running off into the distance, an arm stretched out toward something else, tree branches rising toward the moon — anything that pulls attention toward something else. These lines can give flat surfaces the appearance of depth, dimension, and shape."
+
     },
     "3": {
         "lessons_id" : "3",
         "title" : "Balance",
-        "next_lesson" : "4"
+        "next_lesson" : "4",
+        "p1":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule3_1.jpeg?token=GHSAT0AAAAAABTPA73M5WE2YTGNDSYZ5DYIYS3FFVA",
+        "p2":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule3_2.jpeg?token=GHSAT0AAAAAABTPA73M7IBHWGLNLVR2U3KCYS3FIJQ",
+        "p3":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule3_1_withline.jpeg?token=GHSAT0AAAAAABTPA73MYEYRITSJ6TUJBNSGYS3FJYA",
+        "p4":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule3_2_withline.jpeg?token=GHSAT0AAAAAABTPA73MD62TGDYI5FK7OA46YS3FJ7A",
+        "description":"Balance is related to, but distinct from, symmetry. A balanced image doesn’t necessarily look the same right-to-left or side-to-side. Rather, the various quadrants of the image complement each other in aesthetically pleasing ways. Some photographers further explained this as symmetrical balance and asymmetrical balance. "
     },
     "4": {
         "lessons_id" : "4",
         "title" : "Diagonals",
-        "next_lesson" : "5"
+        "next_lesson" : "5",
+        "p1":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule4_1.jpeg?token=GHSAT0AAAAAABTPA73MNHSWMWD4ZC5A4BZYYS3FKIQ",
+        "p2":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule4_2.png",
+        "p3":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule4_1_withline.jpeg",
+        "p4":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule4_2_withline.png",
+        "description":"You can use the diagonal lines in the scene to compose frames. The diagonal lines tend to produce strong images than the horizontal and vertical lines. The diagonal which connects the opposite corners of the frame may not be used. It will not help to create beautiful images. "
     }, 
     "5": {
         "lessons_id" : "5",
         "title" : "Frames",
-        "next_lesson" : "quiz1" #End of lessons, Go to Quiz 1
+        "next_lesson" : "quiz1" ,#End of lessons, Go to Quiz 1
+        "p1":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule5_1.jpeg",
+        "p2":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule5_2.jpeg",
+        "p3":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule5_1_withline.jpeg",
+        "p4":"https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/rule5_2_withline.jpeg",
+        "description":"Also called sub-framing, this type of compositional technique involves using or adding frame elements to emphasize and lead the viewer's eye towards your subject or to simply add interest to your image. It can be anything from natural frames like rock formations or man-made ones like windows and tunnels. it helps bring focus to your intended subject, it’s bound to create a more aesthetically-pleasing image."
     }
 }
 

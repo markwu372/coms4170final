@@ -1,9 +1,92 @@
 {% extends "layout.html" %}
+
 {% block content %}
-<script type="text/javascript" src="{{ url_for('static', filename = 'lessons.js') }}"></script>
+
+<style>
+
+
+
+    
+</style>
+
+
 <script>
-    let lessons_data = {{lessons_data|tojson}}
+    var lessons_data = {{lessons_data|tojson}};
+    $(document).ready(function(){
+    $("#show_exp").click(function(event){
+        $(".p1").empty();
+        let p3 = $(" <img src={{lessons_data.p3}} alt='explanation 1'></img>");
+        $(".p1").append(p3);
+        $(".p2").empty();
+        let p4 = $(" <img src={{lessons_data.p4}} alt='explanation 2'></img>");
+        $(".p2").append(p4);
+    })
+    $("#show_ori").click(function(event){
+        $(".p1").empty();
+        let p1 = $(" <img alt='Example 1'></img>");
+        p1.attr("src", "{{lessons_data.p1}}");
+        $(".p1").append(p1);
+        $(".p2").empty();
+        let p2 = $(" <img alt='example 2'></img>");
+        p2.attr("src", "{{lessons_data.p2}}");
+        $(".p2").append(p2);
+    })
+
+    $(".next_btn").click(function(){
+        if (lessons_data["lessons_id"] < 5){
+            window.location.replace('/lessons/'+ lessons_data["next_lesson"]);
+        }
+        else{
+            window.location.replace('/quiz/1');
+        }
+    })
+    
+
+})
+
 </script>
+<script type="text/javascript" src="{{url_for('static', filename = 'lessons.js') }}"></script>
 <div id="lessons">
+</div>
+<div class="container-fluid">
+    
+    
+        <br>
+        <div class="row">
+            {{lessons_data.description}}
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 p1">
+                <img src={{lessons_data.p1}} alt="example 1">
+            </div>
+            <div  class="col-md-6 p2">
+                <img src={{lessons_data.p2}} alt="example 2">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10"></div>
+            <div class="col-md-2">
+                <button id="show_exp">Explanation</button>
+                <button id="show_ori">Original</button>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-md-11">
+
+            </div>
+            <div class="col-md-1">
+                <button class="next_btn">Next</button>
+
+            </div>
+
+        </div>
+        
+    
 </div>
 {% endblock %}
