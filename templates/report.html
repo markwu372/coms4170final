@@ -2,7 +2,7 @@
 {% block content %}
 <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
 <script>
-    let correct = {{correct|tojson}};
+    let correct = {{ correct|tojson }};
     let topic = {{ topic|tojson }};
 
     $(".back").click(function(){

@@ -1,35 +1,38 @@
 function check(choice) {
-    let created = {
-        "correct": true,
-        "topic": quiz_data['answer']
-    };
-
+    let created;
     if (choice==quiz_data['answer']) {
+        created = {
+            "correct": '1',
+            "topic": ""
+        };
         $("#" + quiz_data['answer']).addClass('correct');
     }
     else {
-        created['correct'] = false;
+        created = {
+            "correct": '0',
+            "topic": quiz_data['answer']
+        };
         $("#" + choice).addClass('wrong');
         $("#" + quiz_data['answer']).addClass('correct');
     }
 
     //for correct answers, increase the correct_answer variable in server.py; otherwise, add to recommended_list
-    //   $.ajax({
-    //         type: "POST",
-    //         url: "quiz/correct",
-    //         dataType : "json",
-    //         contentType: "application/json; charset=utf-8",
-    //         data : JSON.stringify(created),
-    //         success: function(){
-    //
-    //         },
-    //         error: function(request, status, error){
-    //             console.log("Error");
-    //             console.log(request);
-    //             console.log(status);
-    //             console.log(error);
-    //         }
-    //   });
+    $.ajax({
+        type: "POST",
+        url: "/quiz/correct",
+        dataType : "json",
+        contentType: "application/json; charset=utf-8",
+        data : JSON.stringify(created),
+        success: function(item){
+
+        },
+        error: function(request, status, error){
+            console.log("Error");
+            console.log(request);
+            console.log(status);
+            console.log(error);
+        }
+    });
 }
 
 $(document).ready(function(){

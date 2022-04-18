@@ -141,10 +141,11 @@ def add_correct():
     global recommend_list
 
     item = request.get_json()
-    if item['correct']:
+    if item['correct'] == '1':
         correct_number += 1
     else:
-        recommend_list.append(item['topic'])
+        if item['topic'] not in recommend_list:
+            recommend_list.append(item['topic'])
     return jsonify(item=None)
 
 
