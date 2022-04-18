@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+<script>
+    let correct = {{correct|tojson}};
+    let topic = {{ topic|tojson }};
+
+    $(".back").click(function(){
+        window.location.replace('/home');
+    })
+</script>
+
+<div class="container-fluid">
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Your score is {{ correct }} / 5 </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p> Recommended Topics to Review are {{ topic }}</p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-11">
+
+            </div>
+            <div class="col-md-1">
+                <button class="back">Home</button>
+            </div>
+
+        </div>
+
+
+</div>
+
+
+{% endblock %}

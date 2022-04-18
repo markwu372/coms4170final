@@ -69,30 +69,89 @@ lessons_data = {
 }
 
 quiz_data = {
-    # Test data for quiz pages
     "1": {
         "quiz_id": "1",
-        "title": "Problem1",
-        "next_quiz": "2"
-        # More to be added
+        "title": "Problem 1",
+        "next_lesson": "2",
+        "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz1.png",
+        "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz1_sol.png",
+        "answer": "frames"
+    },
+    "2": {
+        "quiz_id": "2",
+        "title": "Problem 2",
+        "next_lesson": "3",
+        "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz2.jpeg",
+        "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz2_sol.jpeg",
+        "answer": "rule_of_thirds"
+    },
+    "3": {
+        "quiz_id": "3",
+        "title": "Problem 3",
+        "next_lesson": "4",
+        "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz3.jpeg",
+        "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz3_sol.jpeg",
+        "answer": "diagonals"
+    },
+    "4": {
+        "quiz_id": "4",
+        "title": "Problem 4",
+        "next_lesson": "5",
+        "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz4_sol.png",
+        "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz4.png",
+        "answer": "leading_lines"
+    },
+    "5": {
+        "quiz_id": "5",
+        "title": "Problem 5",
+        "next_lesson": "",
+        "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz5.jpeg",
+        "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz5_sol.jpeg",
+        "answer": "balance"
     }
 }
 
+correct_number = 0
+recommend_list = []
+
+
 @app.route('/')
 def homepage():
-   return render_template('homepage.html', homepage_data=homepage_data)
+    return render_template('homepage.html', homepage_data=homepage_data)
+
 
 @app.route('/home')
 def home():
-   return render_template('homepage.html', homepage_data=homepage_data)
+    return render_template('homepage.html', homepage_data=homepage_data)
+
 
 @app.route('/lessons/<id>')
 def lessons(id=None):
     return render_template('lessons.html', lessons_data=lessons_data[id])
 
+
 @app.route('/quiz/<id>')
 def quiz(id=None):
     return render_template('quiz.html', quiz_data=quiz_data[id])
+
+
+@app.route('/quiz/correct', methods=['GET', 'POST'])
+def add_correct():
+    global correct_number
+    global recommend_list
+
+    item = request.get_json()
+    if item['correct']:
+        correct_number += 1
+    else:
+        recommend_list.append(item['topic'])
+    return jsonify(item=None)
+
+
+@app.route('/report')
+def report():
+    return render_template('report.html', correct=correct_number, topic=recommend_list)
+
 
 if __name__ == '__main__':
    app.run(debug = True)

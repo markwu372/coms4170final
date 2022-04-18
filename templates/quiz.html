@@ -4,6 +4,49 @@
 <script>
     let quiz_data = {{quiz_data|tojson}}
 </script>
-<div id="quiz">
+
+<div class="container-fluid">
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-6 question">
+                <img src={{quiz_data.img}} alt="question_image">
+            </div>
+            <div class="col-md-6">
+                <form id="quizzes" name="quizzes">
+                    <div>
+                        <p>What rule(s) are applied to the photo on the left? Select all that apply</p>
+                        <p id="rule_of_thirds"><input type="radio" name="q" value="rule_of_thirds"> Rules of Thirds</p>
+                        <p id="leading_lines"><input type="radio" name="q" value="leading_lines">   Leading Lines</p>
+                        <p id="balance"><input type="radio" name="q" value="balance" class="correct">  Balance</p>
+                        <p id="diagonals"><input type="radio" name="q" value="diagonals">   Diagonals</p>
+                        <p id="frames"><input type="radio" name="q" value="frames">  Frames</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10"></div>
+            <div class="col-md-2">
+                <button id="show_hint">Hint</button>
+                <button id="show_answer" onclick="check(quizzes.q.value)">Check Answer</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-11">
+
+            </div>
+            <div class="col-md-1">
+                <button class="next_btn">Next</button>
+
+            </div>
+
+        </div>
+
+
 </div>
+
+
 {% endblock %}
