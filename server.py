@@ -113,7 +113,7 @@ quiz_data = {
 
 correct_number = 0
 recommend_list = []
-
+quiz_anwsers = []
 
 @app.route('/')
 def homepage():
@@ -141,6 +141,7 @@ def add_correct():
     global recommend_list
 
     item = request.get_json()
+    quiz_anwsers.append(item['topic'])
     if item['correct'] == '1':
         correct_number += 1
     else:
@@ -151,6 +152,7 @@ def add_correct():
 
 @app.route('/report')
 def report():
+    print(quiz_anwsers)
     return render_template('report.html', correct=correct_number, topic=recommend_list)
 
 

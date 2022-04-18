@@ -3,7 +3,7 @@ function check(choice) {
     if (choice==quiz_data['answer']) {
         created = {
             "correct": '1',
-            "topic": ""
+            "topic": quiz_data['answer']
         };
         $("#" + quiz_data['answer']).addClass('correct');
     }
