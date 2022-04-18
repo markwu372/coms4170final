@@ -5,9 +5,14 @@
     let correct = {{ correct|tojson }};
     let topic = {{ topic|tojson }};
 
+
+    $(document).ready(function(){
+
     $(".back").click(function(){
         window.location.replace('/home');
     })
+})
+
 </script>
 
 <div class="container-fluid">
