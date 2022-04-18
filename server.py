@@ -1,4 +1,5 @@
 import json
+from sqlite3 import Timestamp
 from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
@@ -114,6 +115,7 @@ quiz_data = {
 correct_number = 0
 recommend_list = []
 quiz_anwsers = []
+timestamp = []
 
 @app.route('/')
 def homepage():
@@ -134,6 +136,12 @@ def lessons(id=None):
 def quiz(id=None):
     return render_template('quiz.html', quiz_data=quiz_data[id])
 
+@app.route('/timestamp', methods=['GET', 'POST'])
+def add_time():
+    global timestamp
+    item = request.get_json()
+    timestamp.append(item['time'])
+    return jsonify(item=None)
 
 @app.route('/quiz/correct', methods=['GET', 'POST'])
 def add_correct():
@@ -153,6 +161,7 @@ def add_correct():
 @app.route('/report')
 def report():
     print(quiz_anwsers)
+    print(timestamp)
     return render_template('report.html', correct=correct_number, topic=recommend_list)
 
 

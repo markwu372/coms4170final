@@ -41,7 +41,30 @@
         }
     })
     
+    //get page load time Cite from the following page: https://tecadmin.net/get-current-date-time-javascript/
+    let now = new Date();
+    let date = now.getFullYear() + '-' + (now.getMonth()+1) + '-' + now.getDate();
+    let time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+    let currentTime = date+' '+time;
+    time_to_send = {
+        "time": currentTime
+    }
+    $.ajax({
+        type: "POST",
+        url: "/../timestamp",
+        dataType : "json",
+        contentType: "application/json; charset=utf-8",
+        data : JSON.stringify(time_to_send),
+        success: function(item){
 
+        },
+        error: function(request, status, error){
+            console.log("Error");
+            console.log(request);
+            console.log(status);
+            console.log(error);
+        }
+    });
 })
 
 </script>
