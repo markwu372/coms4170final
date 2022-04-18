@@ -14,22 +14,22 @@ function check(choice) {
     }
 
     //for correct answers, increase the correct_answer variable in server.py; otherwise, add to recommended_list
-      $.ajax({
-            type: "POST",
-            url: "quiz/correct",
-            dataType : "json",
-            contentType: "application/json; charset=utf-8",
-            data : JSON.stringify(created),
-            success: function(){
-
-            },
-            error: function(request, status, error){
-                console.log("Error");
-                console.log(request);
-                console.log(status);
-                console.log(error);
-            }
-      });
+    //   $.ajax({
+    //         type: "POST",
+    //         url: "quiz/correct",
+    //         dataType : "json",
+    //         contentType: "application/json; charset=utf-8",
+    //         data : JSON.stringify(created),
+    //         success: function(){
+    //
+    //         },
+    //         error: function(request, status, error){
+    //             console.log("Error");
+    //             console.log(request);
+    //             console.log(status);
+    //             console.log(error);
+    //         }
+    //   });
 }
 
 $(document).ready(function(){
