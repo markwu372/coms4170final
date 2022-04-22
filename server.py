@@ -76,7 +76,8 @@ quiz_data = {
         "next_lesson": "2",
         "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz1.png",
         "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz1_sol.png",
-        "answer": "frames"
+        "answer": "frames",
+        "learning_url": "../lessons/5"
     },
     "2": {
         "quiz_id": "2",
@@ -84,7 +85,8 @@ quiz_data = {
         "next_lesson": "3",
         "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz2.jpeg",
         "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz2_sol.jpeg",
-        "answer": "rule_of_thirds"
+        "answer": "rule_of_thirds",
+        "learning_url": "../lessons/1"
     },
     "3": {
         "quiz_id": "3",
@@ -92,7 +94,8 @@ quiz_data = {
         "next_lesson": "4",
         "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz3.jpeg",
         "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz3_sol.jpeg",
-        "answer": "diagonals"
+        "answer": "diagonals",
+        "learning_url": "../lessons/4"
     },
     "4": {
         "quiz_id": "4",
@@ -100,7 +103,8 @@ quiz_data = {
         "next_lesson": "5",
         "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz4_sol.png",
         "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz4.png",
-        "answer": "leading_lines"
+        "answer": "leading_lines",
+        "learning_url": "../lessons/2"
     },
     "5": {
         "quiz_id": "5",
@@ -108,9 +112,11 @@ quiz_data = {
         "next_lesson": "",
         "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz5.jpeg",
         "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz5_sol.jpeg",
-        "answer": "balance"
+        "answer": "balance",
+        "learning_url": "../lessons/3"
     }
 }
+
 
 correct_number = 0
 recommend_list = []

@@ -1,21 +1,35 @@
 function check(choice) {
     let created;
+    let rules = ["frames", "rule_of_thirds", "diagonals", "leading_lines", "balance"]
+    $("#feedback").empty()
+    let feedback = "feedback: <br>" 
     if (choice==quiz_data['answer']) {
         created = {
             "correct": '1',
             "topic": quiz_data['answer']
         };
         $("#" + quiz_data['answer']).addClass('correct');
+        feedback += "Great Job!"
     }
     else {
         created = {
             "correct": '0',
             "topic": quiz_data['answer']
         };
+        $(".question").empty();
+        let sol_img = quiz_data['solution'];
+        let hint = $("<img src=" + sol_img + " alt='hint_img'> </img>");
+        $("#" + quiz_data['answer']).removeClass("correct")
+        for (let i = 0; i < rules.length; i++) {
+            $("#" + rules[i]).removeClass('wrong');
+        }
+        $(".question").append(hint);
         $("#" + choice).addClass('wrong');
         $("#" + quiz_data['answer']).addClass('correct');
+        feedback += "As the annotation suggested, the correct anwser should be <b> " + quiz_data['answer'] + "</b>. ";
+        feedback += "Let's review the definition and examples of " + "<a href=\"" + quiz_data['learning_url'] + "\">" + quiz_data['answer'] + ".</a>"
     }
-
+    $("#feedback").append(feedback)
     //for correct answers, increase the correct_answer variable in server.py; otherwise, add to recommended_list
     $.ajax({
         type: "POST",
