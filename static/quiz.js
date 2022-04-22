@@ -57,17 +57,18 @@ $(document).ready(function(){
         $(".question").append(hint);
     });
 
-    // $("#show_answer").click(function(){
-    //     let choice = document.quizzes.q.value;
-    //     console.log(choice);
-    //     if (choice==quiz_data['answer']) {
-    //         count += 1
-    //     }
-    //     console.log(count);
-    //     console.log(quiz_data['answer']);
-    //     $("#" + choice).addClass('wrong');
-    //     $("#" + quiz_data['answer']).addClass('correct');
-    // });
+    $("#show_answer").click(function(){
+        $(this).prop('disabled', true); 
+        // let choice = document.quizzes.q.value;
+        // console.log(choice);
+        // if (choice==quiz_data['answer']) {
+        //     count += 1
+        // }
+        // console.log(count);
+        // console.log(quiz_data['answer']);
+        // $("#" + choice).addClass('wrong');
+        // $("#" + quiz_data['answer']).addClass('correct');
+    });
 
     $(".next_btn").click(function(){
         if (quiz_data["quiz_id"] < 5){
