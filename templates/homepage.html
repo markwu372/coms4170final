@@ -1,35 +1,83 @@
 {% extends "layout.html" %}
 {% block content %}
 <script type="text/javascript" src="{{ url_for('static', filename = 'homepage.js') }}"></script>
+
+<style>
+    .home-title{
+        font-size: 20pt;
+        text-align: center;
+    }
+    .homepage{
+        background-image: url('https://fshoq.com/images/blog/imagebar/photography-basics.jpg');
+        background-position: center;
+        background-size: cover;
+        height: 280pt;
+    }
+    .btn-style{
+        border-color: white;
+        border-radius: 5pt;
+        width: 110pt;
+        
+    }
+    .home-exp{
+        font-style: italic;
+        color: gray;
+        text-align: right;
+    }
+</style>
 <script>
     let homepage_data = {{homepage_data|tojson}}
 </script>
 <div>
-    <div class="container">
+    <div class="container-fluid">
+        <div class="row homepage">
+        </div>
         <div class="row">
             <div class="col-md-6">
-                <div> <b>What is photo composition?</b> </div>
+                <br>
+                <br>
+                <div class="home-title"> <b>What is photo composition?</b> </div>
+                <br>
                 <div class="row">
-                    <div class="col-auto-12" id="description">
+                    <div class="col-md-12" id="description">
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <div> <b>Selected Composition Rules/Types</b> </div>
+                <br>
+                <br>
+                <div class="home-title"> <b>Selected Composition Rules/Types</b> </div>
+                <br>
                 <div class="row">
-                    <div class="col-auto-12" id="rules">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-10" id="rules">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-8"> </div>
-                    <div class="col-auto">
-                        <form action="lessons/1">
-                            <input type="submit" value="start">
-                        </form>                        
-                    </div>
-                </div>
+
             </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-10"> </div>
+            <div class="col-auto">
+                <form action="lessons/1">
+                    <input class="btn-style" type="submit" value="start">
+                </form>                        
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 home-exp">
+                In the learning session, press "Explanation" to show annotations <br>
+                and press "Original" to show the original example pictures 
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
 </div>
 {% endblock %}

@@ -72,6 +72,7 @@ lessons_data = {
 quiz_data = {
     "1": {
         "quiz_id": "1",
+        "quiz_progress": 16.6,
         "title": "Problem 1",
         "next_lesson": "2",
         "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz1.png",
@@ -82,6 +83,7 @@ quiz_data = {
     "2": {
         "quiz_id": "2",
         "title": "Problem 2",
+        "quiz_progress": 33.3,
         "next_lesson": "3",
         "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz2.jpeg",
         "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz2_sol.jpeg",
@@ -91,6 +93,7 @@ quiz_data = {
     "3": {
         "quiz_id": "3",
         "title": "Problem 3",
+        "quiz_progress": 50.0,
         "next_lesson": "4",
         "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz3.jpeg",
         "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz3_sol.jpeg",
@@ -99,6 +102,7 @@ quiz_data = {
     },
     "4": {
         "quiz_id": "4",
+        "quiz_progress": 66.7,
         "title": "Problem 4",
         "next_lesson": "5",
         "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz4_sol.png",
@@ -108,13 +112,26 @@ quiz_data = {
     },
     "5": {
         "quiz_id": "5",
+        "quiz_progress": 83.3,
         "title": "Problem 5",
-        "next_lesson": "",
+        "next_lesson": "6",
         "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz5.jpeg",
         "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz5_sol.jpeg",
         "answer": "balance",
         "learning_url": "../lessons/3"
+    },
+    "6": {
+        "quiz_id": "6",
+        "quiz_progress": 100,
+        "title": "Problem 6",
+        "next_lesson": "",
+        "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz6.jpeg",
+        "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz6_sol.jpeg",
+        "answer": "leading_lines",
+        "learning_url": "../lessons/2"
     }
+
+
 }
 
 

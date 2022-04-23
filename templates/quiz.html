@@ -5,8 +5,60 @@
     let quiz_data = {{quiz_data|tojson}}
 </script>
 
+
+<style>
+    .animated-progress {
+  width: 300px;
+  height: 20px;
+  border-radius: 5px;
+  margin: 20px 10px;
+  border: 1px solid gray;
+  overflow: hidden;
+  position: relative;
+}
+
+.animated-progress span {
+  height: 100%;
+  display: block;
+  width: 0;
+  color: rgb(255, 251, 251);
+  line-height: 30px;
+  position: absolute;
+  text-align: end;
+  padding-right: 5px;
+}
+
+.progress-blue span {
+  background-color: gray;
+}
+
+.quiz-title{
+    font-size: larger;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.btn-style{
+        border-color: white;
+        border-radius: 5pt;
+        width: 130px;
+    }
+</style>
+
 <div class="container-fluid">
         <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-8 quiz-title">{{quiz_data.title}}</div>
+            <div class="col-md-4">
+                <div class="animated-progress progress-blue">
+                    <span data-progress={{quiz_data.quiz_progress}}></span>
+                </div>
+
+            </div>
+        </div>
+       
         <br>
         <div class="row">
             <div class="col-md-6 question">
@@ -28,9 +80,9 @@
         </div>
         <div class="row">
             <div class="col-md-10"></div>
-            <div class="col-md-2">
-                <button id="show_hint">Hint</button>
-                <button id="show_answer" onclick="check(quizzes.q.value)">Check Answer</button>
+            <div class="col-md-2 lesson-btns">
+                <button class="btn-style" id="show_hint">Hint</button>
+                <button class="btn-style" id="show_answer" onclick="check(quizzes.q.value)">Check Answer</button>
             </div>
         </div>
         <br>
@@ -40,7 +92,7 @@
 
             </div>
             <div class="col-md-1">
-                <button class="next_btn">Next</button>
+                <button class="next_btn btn-style">Next</button>
 
             </div>
 

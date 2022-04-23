@@ -71,11 +71,21 @@ $(document).ready(function(){
     });
 
     $(".next_btn").click(function(){
-        if (quiz_data["quiz_id"] < 5){
+        if (quiz_data["quiz_id"] < 6){
             window.location.replace('/quiz/' + quiz_data["next_lesson"]);
         }
         else{
             window.location.replace('/report');
         }
     });
+
+    $(".animated-progress span").each(function () {
+        $(this).animate(
+          {
+            width: $(this).attr("data-progress") + "%",
+          },
+          500
+        );
+        
+      });
 });
