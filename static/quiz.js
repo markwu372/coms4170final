@@ -14,7 +14,7 @@ function check(choice) {
     else {
         created = {
             "correct": '0',
-            "topic": quiz_data['answer']
+            "topic": quiz_data['topic']
         };
         $(".question").empty();
         let sol_img = quiz_data['solution'];

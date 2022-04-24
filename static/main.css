@@ -10,3 +10,29 @@ img{
 .wrong{
     color: indianred;
 }
+
+.header {
+    border-bottom: 5px solid tan;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+.score {
+    font-size: 24px;
+    font-family: "Gill Sans", "sans-serif";
+}
+
+.back {
+    font-size: 20px;
+}
+
+.book1 {
+    padding-left: 40px;
+}
+
+.link {
+    color: blue;
+}
+
+
+

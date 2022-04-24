@@ -78,6 +78,7 @@ quiz_data = {
         "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz1.png",
         "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz1_sol.png",
         "answer": "frames",
+        "topic": "Frames",
         "learning_url": "../lessons/5"
     },
     "2": {
@@ -88,6 +89,7 @@ quiz_data = {
         "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz2.jpeg",
         "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz2_sol.jpeg",
         "answer": "rule_of_thirds",
+        "topic": "Rules of Thirds",
         "learning_url": "../lessons/1"
     },
     "3": {
@@ -98,6 +100,7 @@ quiz_data = {
         "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz3.jpeg",
         "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz3_sol.jpeg",
         "answer": "diagonals",
+        "topic": "Diagonals",
         "learning_url": "../lessons/4"
     },
     "4": {
@@ -108,6 +111,7 @@ quiz_data = {
         "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz4_sol.png",
         "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz4.png",
         "answer": "leading_lines",
+        "topic": "Leading Lines",
         "learning_url": "../lessons/2"
     },
     "5": {
@@ -118,6 +122,7 @@ quiz_data = {
         "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz5.jpeg",
         "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz5_sol.jpeg",
         "answer": "balance",
+        "topic": "Balance",
         "learning_url": "../lessons/3"
     },
     "6": {
@@ -128,17 +133,25 @@ quiz_data = {
         "img": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz6.jpeg",
         "solution": "https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/quiz6_sol.jpeg",
         "answer": "leading_lines",
+        "topic": "Leading Lines",
         "learning_url": "../lessons/2"
     }
-
-
 }
 
+lesson_index = {
+    "Rules of Thirds": 1,
+    "Leading Lines": 2,
+    "Balance": 3,
+    "Diagonals": 4,
+    "Frames": 5
+}
 
 correct_number = 0
 recommend_list = []
 quiz_anwsers = []
 timestamp = []
+topic_list = []
+
 
 @app.route('/')
 def homepage():
@@ -159,6 +172,7 @@ def lessons(id=None):
 def quiz(id=None):
     return render_template('quiz.html', quiz_data=quiz_data[id])
 
+
 @app.route('/timestamp', methods=['GET', 'POST'])
 def add_time():
     global timestamp
@@ -166,26 +180,48 @@ def add_time():
     timestamp.append(item['time'])
     return jsonify(item=None)
 
+
 @app.route('/quiz/correct', methods=['GET', 'POST'])
 def add_correct():
     global correct_number
     global recommend_list
+    global lesson_index
+    global topic_list
 
     item = request.get_json()
     quiz_anwsers.append(item['topic'])
     if item['correct'] == '1':
         correct_number += 1
     else:
-        if item['topic'] not in recommend_list:
-            recommend_list.append(item['topic'])
+        if item['topic'] not in topic_list:
+            topic = {'word': item['topic'], 'indice': lesson_index[item['topic']]}
+            topic_list.append(item['topic'])
+            recommend_list.append(topic)
     return jsonify(item=None)
 
 
 @app.route('/report')
 def report():
-    print(quiz_anwsers)
-    print(timestamp)
+    # print(quiz_anwsers)
+    # print(timestamp)
+    # print(recommend_list)
     return render_template('report.html', correct=correct_number, topic=recommend_list)
+
+
+@app.route('/clear', methods=['GET', 'POST'])
+def clear():
+    global correct_number
+    global recommend_list
+    global topic_list
+    global quiz_anwsers
+
+    item = request.get_json()
+    print(item)
+    correct_number = 0
+    recommend_list = []
+    topic_list = []
+    quiz_anwsers = []
+    return jsonify(item=None)
 
 
 if __name__ == '__main__':

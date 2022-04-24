@@ -5,27 +5,68 @@
     let correct = {{ correct|tojson }};
     let topic = {{ topic|tojson }};
 
+    function display_topics(topic) {
+      $.each(topic, function (index, top) {
+          let new_item = $("<a></a>");
+          let new_row = $("<li></li>");
+          new_item.prop("href", "/lessons/" + top['indice']);
+          new_item.html(top['word']);
+          new_item.addClass("link");
+          new_row.append(new_item);
+          $('#topics').append(new_row);
+      });
+    }
 
     $(document).ready(function(){
-
-    $(".back").click(function(){
-        window.location.replace('/home');
+        $(".topics").empty();
+        display_topics(topic);
+        $(".back").click(function(){
+            $.ajax({
+                type: "POST",
+                url: "/clear",
+                dataType : "json",
+                contentType: "application/json; charset=utf-8",
+                data : JSON.stringify(topic),
+                success: function(){
+                    window.location.replace('/home');
+                },
+                error: function(request, status, error){
+                    console.log("Error");
+                    console.log(request);
+                    console.log(status);
+                    console.log(error);
+                }
+            })
+        })
     })
-})
 
 </script>
 
 <div class="container-fluid">
         <br>
         <br>
+    <div class="row">
+        <h1 class="header">
+            Quiz Report
+        </h1>
+    </div>
+
         <div class="row">
-            <div class="col-md-6">
-                <p>Your score is {{ correct }} / 5 </p>
+            <div class="col-md-6 score" id="mark">
+                <p>Your score : {{ correct }} out of 6 </p>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
-                <p> Recommended Topics to Review are {{ topic }}</p>
+            <div class="col-md-6 score">
+                <p> Topics You Might Want to Review : </p>
+                <div id="topics"></div>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 10px">
+            <div class="col-md-8 score" id="books">
+                <p> Recommended Books : </p>
+                <li class="book1"> “Picture This: How Pictures Work” by Molly Bang </li>
+                <li class="book1"> “The Photographer’s Eye” by Michael Freeman </li>
             </div>
         </div>
         <br>
@@ -39,7 +80,6 @@
             </div>
 
         </div>
-
 
 </div>
 
