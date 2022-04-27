@@ -7,7 +7,7 @@
 
 
 <style>
-    .animated-progress {
+.animated-progress {
   width: 300px;
   height: 20px;
   border-radius: 5px;
@@ -23,8 +23,8 @@
   width: 0;
   color: rgb(255, 251, 251);
   line-height: 30px;
-  position: absolute;
-  text-align: end;
+  position: relative;
+  text-align: center;
   padding-right: 5px;
 }
 
@@ -43,6 +43,12 @@
         border-radius: 5pt;
         width: 130px;
     }
+
+pre {
+    padding-top: 0%;
+    margin-top: 0%;
+    display: inline;
+}
 </style>
 
 <div class="container-fluid">
@@ -52,13 +58,13 @@
         <div class="row">
             <div class="col-md-8 quiz-title">{{quiz_data.title}}</div>
             <div class="col-md-4">
+                <pre> Your Progress</pre><br>
+                <pre sytle="line-height:.1;display:inline-flex"> Question: {{quiz_data.quiz_id}}/6</pre>
                 <div class="animated-progress progress-blue">
                     <span data-progress={{quiz_data.quiz_progress}}></span>
                 </div>
-
             </div>
         </div>
-       
         <br>
         <div class="row">
             <div class="col-md-6 question">
@@ -82,7 +88,7 @@
             <div class="col-md-10"></div>
             <div class="col-md-2 lesson-btns">
                 <button class="btn-style" id="show_hint">Hint</button>
-                <button class="btn-style" id="show_answer" onclick="check(quizzes.q.value)">Check Answer</button>
+                <button class="btn-style" id="show_answer" onclick="check(quizzes.q.value)">Submit Answer</button>
             </div>
         </div>
         <br>
@@ -97,7 +103,7 @@
             </div>
 
         </div>
-
+        
 </div>
 
 

@@ -2,14 +2,14 @@ function check(choice) {
     let created;
     let rules = ["frames", "rule_of_thirds", "diagonals", "leading_lines", "balance"]
     $("#feedback").empty()
-    let feedback = "feedback: <br>" 
+    let feedback = "Feedback: <br>" 
     if (choice==quiz_data['answer']) {
         created = {
             "correct": '1',
             "topic": quiz_data['answer']
         };
         $("#" + quiz_data['answer']).addClass('correct');
-        feedback += "Great Job!"
+        feedback += "Correct anwser, Great Job!"
     }
     else {
         created = {
@@ -26,7 +26,7 @@ function check(choice) {
         $(".question").append(hint);
         $("#" + choice).addClass('wrong');
         $("#" + quiz_data['answer']).addClass('correct');
-        feedback += "As the annotation suggested, the correct anwser should be <b> " + quiz_data['answer'] + "</b>. ";
+        feedback += "Wrong anwser. As the annotation suggested, the correct anwser should be <b> " + quiz_data['answer'] + "</b>. ";
         feedback += "Let's review the definition and examples of " + "<a href=\"" + quiz_data['learning_url'] + "\">" + quiz_data['answer'] + ".</a>"
     }
     $("#feedback").append(feedback)
@@ -59,15 +59,6 @@ $(document).ready(function(){
 
     $("#show_answer").click(function(){
         $(this).prop('disabled', true); 
-        // let choice = document.quizzes.q.value;
-        // console.log(choice);
-        // if (choice==quiz_data['answer']) {
-        //     count += 1
-        // }
-        // console.log(count);
-        // console.log(quiz_data['answer']);
-        // $("#" + choice).addClass('wrong');
-        // $("#" + quiz_data['answer']).addClass('correct');
     });
 
     $(".next_btn").click(function(){

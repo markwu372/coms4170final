@@ -202,9 +202,6 @@ def add_correct():
 
 @app.route('/report')
 def report():
-    # print(quiz_anwsers)
-    # print(timestamp)
-    # print(recommend_list)
     return render_template('report.html', correct=correct_number, topic=recommend_list)
 
 
