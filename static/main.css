@@ -34,5 +34,12 @@ img{
     color: blue;
 }
 
+.btn-style{
+    border-color: white;
+    border-radius: 5pt;
+    width: 110pt;
+    
+}
+
 
 
