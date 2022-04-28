@@ -45,20 +45,23 @@
 <div class="container-fluid">
         <br>
         <br>
+        <br>
     <div class="row">
         <h1 class="header">
             Quiz Report
         </h1>
     </div>
-
+    <br>
+    <br>
+    <br>
         <div class="row">
             <div class="col-md-6 score" id="mark">
-                <p>Your score : {{ correct }} out of 6 </p>
+                <p style="display: inline;">Your score :</p> <p style="font-weight: bold; display: inline;">  &emsp;&emsp;&emsp;     &emsp;{{ correct }}</p> <p style="display:inline;"> out of 6 </p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 score">
-                <p> Topics You Might Want to Review : </p>
+                <p> Topics You Might Want to Review : &emsp;&emsp;&emsp;</p>
                 <div id="topics"></div>
             </div>
         </div>
@@ -76,6 +79,10 @@
 
             </div>
             <div class="col-md-1">
+                <br>
+                <br>
+                <br>
+                <br>
                 <button class="back btn-style">Home</button>
             </div>
 

@@ -5,20 +5,22 @@
 <style>
     .home-title{
         font-size: 20pt;
-        text-align: center;
+        text-align: left;
     }
     .homepage{
-        background-image: url('https://fshoq.com/images/blog/imagebar/photography-basics.jpg');
+        background-image: url('https://raw.githubusercontent.com/markwu372/coms4170final/main/data/images/homepage-title.jpeg');
         background-position: center;
         background-size: cover;
         height: 280pt;
     }
     .btn-style{
-        border-color: white;
+        border-color: #c2c2b4;
         border-radius: 5pt;
         width: 110pt;
-        
+        background-color: #c2c2b4;
+        color:rgba(255, 255, 255, 0.859) ;
     }
+
 </style>
 <script>
     let homepage_data = {{homepage_data|tojson}}
@@ -31,6 +33,11 @@
             <div class="col-md-6">
                 <br>
                 <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
                 <div class="home-title"> <b>What is photo composition?</b> </div>
                 <br>
                 <div class="row">
@@ -41,11 +48,16 @@
             <div class="col-md-6">
                 <br>
                 <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
                 <div class="home-title"> <b>Selected Composition Rules/Types</b> </div>
                 <br>
                 <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-10" id="rules">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-11" id="rules">
                     </div>
                 </div>
 

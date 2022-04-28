@@ -12,7 +12,7 @@
   height: 20px;
   border-radius: 5px;
   margin: 20px 10px;
-  border: 1px solid gray;
+  border: 1px solid #c2c2b4;
   overflow: hidden;
   position: relative;
 }
@@ -29,26 +29,44 @@
 }
 
 .progress-blue span {
-  background-color: gray;
+  background-color: #c2c2b4;
+  line-height: 90%;
 }
 
 .quiz-title{
-    font-size: larger;
+    font-size: 36px;
     font-weight: bold;
     font-style: italic;
 }
 
 .btn-style{
-        border-color: white;
+        border-color: #c2c2b4;
         border-radius: 5pt;
-        width: 130px;
+        width: 110pt;
+        background-color: #c2c2b4;
+        color:rgba(255, 255, 255, 0.859) ;
     }
 
 pre {
     padding-top: 0%;
     margin-top: 0%;
     display: inline;
+    font-style: italic;
+        color: gray;
+        text-align: right;
+    line-height: normal;
 }
+
+.quiz-btns{
+    display:inline-flex;
+    margin-left: 765px;
+}
+
+.aa{
+    margin-left: 910px;
+}
+
+
 </style>
 
 <div class="container-fluid">
@@ -58,13 +76,15 @@ pre {
         <div class="row">
             <div class="col-md-8 quiz-title">{{quiz_data.title}}</div>
             <div class="col-md-4">
-                <pre> Your Progress</pre><br>
-                <pre sytle="line-height:.1;display:inline-flex"> Question: {{quiz_data.quiz_id}}/6</pre>
+                <pre> Your Progress        </pre>
+                <pre sytle="display:inline-flex;"> Question: {{quiz_data.quiz_id}}/6</pre>
                 <div class="animated-progress progress-blue">
                     <span data-progress={{quiz_data.quiz_progress}}></span>
                 </div>
             </div>
         </div>
+        <br>
+        <br>
         <br>
         <div class="row">
             <div class="col-md-6 question">
@@ -82,23 +102,31 @@ pre {
                     </div>
                 </form>
                 <div id="feedback"> </div>
+                
             </div>
         </div>
         <div class="row">
-            <div class="col-md-10"></div>
-            <div class="col-md-2 lesson-btns">
+            <div class="col-md-8"></div>
+            <br>
+
+            <div class="col-md-4 quiz-btns">
                 <button class="btn-style" id="show_hint">Hint</button>
                 <button class="btn-style" id="show_answer" onclick="check(quizzes.q.value)">Submit Answer</button>
             </div>
         </div>
         <br>
         <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="row">
-            <div class="col-md-11">
+            <div class="col-md-10">
 
             </div>
-            <div class="col-md-1">
-                <button class="next_btn btn-style">Next</button>
+            
+            <div class="col-md-2">
+                <button style="display: inline;" class="next_btn btn-style">Next</button>
 
             </div>
 

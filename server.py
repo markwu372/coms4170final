@@ -7,7 +7,7 @@ app = Flask(__name__)
 import copy
 
 homepage_data = {
-    "description": "Photo composition is how a photographer arranges visual elements within their frame. “It’s a pleasing organization of objects within your rectangle,” says photographer Adam Long. Putting subjects or scenes inside that space may sound easy, yet it’s anything but. Composition in your shots can often be difficult and it’s always important. “Everything can seem perfect: lighting, location, wardrobe, styling, whatever,” says photographer Grace Rivera. “But if your composition is off, that’s a deal breaker.”",
+    "description": "    Photo composition is how a photographer arranges visual elements within their frame.“ It’s a pleasing organization of objects within your rectangle,” says photographer Adam Long. Putting subjects or scenes inside that space may sound easy, yet it’s anything but. Composition in your shots can often be difficult and it’s always important. “Everything can seem perfect: lighting, location, wardrobe, styling, whatever,” says photographer Grace Rivera. “But if your composition is off, that’s a deal breaker.”",
     "rules": ["Rules of Thirds", "Leading Lines", "Balance", "Diagonals", "Frames"]
 }
 

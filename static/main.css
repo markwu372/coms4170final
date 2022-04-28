@@ -4,17 +4,23 @@ img{
 }
 
 .correct{
-    color: green;
+    color: rgba(111, 166, 121, 0.757);
 }
 
 .wrong{
-    color: indianred;
+    color: rgb(150,80,75);
+}
+
+.navbar{
+    background-color: #c2c2b4;
 }
 
 .header {
-    border-bottom: 5px solid tan;
+    border-bottom: 5px solid #c2c2b4;
     font-style: italic;
     margin-bottom: 40px;
+    font-size: 36px;
+    font-weight: bold;
 }
 
 .score {
@@ -35,10 +41,11 @@ img{
 }
 
 .btn-style{
-    border-color: white;
+    border-color: #c2c2b4;
     border-radius: 5pt;
     width: 110pt;
-    
+    background-color: #c2c2b4;
+    color:rgba(255, 255, 255, 0.859) ;
 }
 
 
